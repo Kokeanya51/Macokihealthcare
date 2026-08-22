@@ -1,774 +1,165 @@
 <!DOCTYPE html>
-<html lang="en">   
+<html lang="en">  
 <link rel="stylesheet" href="style.css">/head>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="MACOKI Master Portal - Healthcare, Education, Digital Library & CBT Excellence">
-  <title>MACOKI Master Portal | Healthcare • Education • Excellence</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="MACOKI Digital Ecosystem — Healthcare, Education, Technology and Community">
+<title>MACOKI Digital Ecosystem | Master Portal</title>
+<style>
+:root{--primary:#087152;--primary2:#0b8b69;--dark:#102c24;--text:#17251f;--muted:#63756e;--bg:#f5faf8;--card:#fff;--line:#dce9e4;--soft:#e7f5ef;--danger:#b82c2c;--warning:#d69b18}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}a{text-decoration:none;color:inherit}.container{width:min(1150px,92%);margin:auto}
+header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:10px;color:var(--dark)}.logo{width:44px;height:44px;border-radius:13px;background:var(--primary);display:grid;place-items:center;color:#fff;font-weight:900;font-size:23px}.brand b{display:block}.brand small{display:block;color:var(--muted);font-size:10px}.links{display:flex;gap:4px;align-items:center}.links a{padding:9px 10px;border-radius:9px;font-size:13px;font-weight:700;color:#40534d}.links a:hover,.links a.active{background:var(--soft);color:var(--primary)}.menu{display:none;border:0;background:none;font-size:27px}
+.hero{padding:85px 0;background:radial-gradient(circle at 85% 25%,#dff8ee,transparent 35%),linear-gradient(135deg,#f8fffc,#eaf7f2)}.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:center}.eyebrow{font-size:12px;letter-spacing:1.6px;font-weight:900;color:var(--primary)}h1{font-size:clamp(40px,6vw,70px);line-height:1.03;margin:12px 0 20px}.hero h1 span{color:var(--primary)}.hero p{font-size:18px;color:var(--muted);max-width:700px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{border:0;border-radius:10px;padding:12px 18px;font-weight:800;cursor:pointer;display:inline-flex;justify-content:center;align-items:center}.primary{background:var(--primary);color:#fff}.secondary{background:var(--soft);color:var(--primary)}.danger{background:var(--danger);color:#fff}.hero-card,.card,.panel{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:0 12px 35px #16382d0d}.hero-card{padding:35px}.hero-logo{width:76px;height:76px;border-radius:22px;background:var(--soft);display:grid;place-items:center;color:var(--primary);font-size:36px;font-weight:900}.mini{display:flex;gap:25px;margin-top:25px}.mini b{display:block;color:var(--primary);font-size:23px}.mini span{font-size:12px;color:var(--muted)}
+section{padding:75px 0}.section-title{text-align:center;margin-bottom:35px}.section-title h2{font-size:39px;line-height:1.1;margin:8px 0}.section-title p{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{padding:24px;transition:.2s}.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px #16382d17}.icon{font-size:31px}.card h3{margin:10px 0 6px}.card p{color:var(--muted);font-size:14px}.alt{background:#edf7f3}.two{display:grid;grid-template-columns:1fr 1fr;gap:25px}.panel{padding:28px}.panel h2{margin-top:0}.list{padding-left:20px}.list li{margin:9px 0}.notice{background:#fff8e5;border-left:4px solid var(--warning);padding:14px;border-radius:8px;color:#624e1e}.warn-strong{background:#fdeaea;border-left:4px solid var(--danger);padding:14px;border-radius:8px;color:#5c1c1c;font-weight:700}.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.service{padding:20px;border:1px solid var(--line);border-radius:14px;background:#fff}.service strong{color:var(--primary)}
+label{display:block;font-weight:700;margin:13px 0}input,select,textarea{width:100%;padding:12px;margin-top:6px;border:1px solid #cddcd6;border-radius:9px;font:inherit;background:#fff}textarea{min-height:110px;resize:vertical}.success{color:var(--primary);font-weight:800}.hidden{display:none!important}.center{text-align:center}
+.student-dashboard{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.stat{padding:20px;background:#fff;border:1px solid var(--line);border-radius:14px;text-align:center}.stat b{display:block;font-size:28px;color:var(--primary)}
+.search{max-width:600px;margin:0 auto 25px}.library-item{padding:18px;border:1px solid var(--line);background:#fff;border-radius:13px;margin:10px 0;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.library-item small{color:var(--muted);display:block;margin-top:4px}.tag{background:var(--soft);color:var(--primary);font-size:11px;font-weight:800;padding:3px 8px;border-radius:20px}
+.exam-top{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:15px;margin-bottom:25px}.answers{display:grid;gap:11px}.answer{border:1px solid #d4e2dc;background:#fff;padding:14px;text-align:left;border-radius:10px;cursor:pointer;font:inherit}.answer.selected{background:var(--soft);border-color:var(--primary)}.exam-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:25px;flex-wrap:wrap}.score{font-size:70px;font-weight:900;color:var(--primary)}.qnav{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}.qdot{width:30px;height:30px;border-radius:8px;border:1px solid var(--line);background:#fff;display:grid;place-items:center;font-size:12px;font-weight:700;cursor:pointer}.qdot.answered{background:var(--soft);border-color:var(--primary);color:var(--primary)}.qdot.current{outline:2px solid var(--primary)}
+.record-row{padding:16px;border:1px solid var(--line);background:#fff;border-radius:12px;margin:10px 0;cursor:pointer}.record-row:hover{border-color:var(--primary)}.record-row b{color:var(--primary)}.record-detail{padding:20px;border:1px solid var(--line);border-radius:14px;background:#fff;margin-top:14px}
+footer{background:var(--dark);color:#d9e9e3;padding:40px 0}.footer-grid{display:flex;justify-content:space-between;gap:25px}.small{font-size:12px;color:#a8beb6}
+@media(max-width:900px){.links{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;padding:12px;flex-direction:column;align-items:stretch;box-shadow:0 15px 30px #0001}.links.open{display:flex}.menu{display:block}.hero-grid,.two{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.student-dashboard{grid-template-columns:repeat(2,1fr)}.service-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.grid,.student-dashboard,.service-grid{grid-template-columns:1fr}.hero{padding:55px 0}.footer-grid{flex-direction:column}section{padding:55px 0}.library-item{flex-direction:column;align-items:flex-start}}
+</style>
 </head>
 <body>
-  <!-- Loading Screen -->
-  <div id="loader">
-    <div class="loader-content">
-      <div class="logo-spin">
-        <svg viewBox="0 0 100 100" class="logo-svg">
-          <circle cx="50" cy="50" r="45" fill="none" stroke="#0D9488" stroke-width="4"/>
-          <text x="50" y="58" text-anchor="middle" fill="#0D9488" font-size="22" font-weight="bold" font-family="Poppins">M</text>
-        </svg>
-      </div>
-      <p>MACOKI Portal Loading...</p>
-    </div>
-  </div>
 
-  <!-- Header -->
-  <header id="main-header">
-    <div class="container header-inner">
-      <a href="#home" class="logo" aria-label="MACOKI Home">
-        <div class="logo-icon">
-          <svg viewBox="0 0 48 48" width="42" height="42">
-            <defs>
-              <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#0D9488"/>
-                <stop offset="50%" style="stop-color:#EC4899"/>
-                <stop offset="100%" style="stop-color:#F59E0B"/>
-              </linearGradient>
-            </defs>
-            <circle cx="24" cy="24" r="22" fill="url(#logoGrad)"/>
-            <text x="24" y="30" text-anchor="middle" fill="#fff" font-size="18" font-weight="800" font-family="Poppins">M</text>
-          </svg>
-        </div>
-        <div class="logo-text">
-          <span class="brand">MACOKI</span>
-          <span class="tagline">Excellence Portal</span>
-        </div>
-      </a>
+<header>
+<div class="container nav">
+<a href="#home" class="brand"><span class="logo">M</span><span><b>MACOKI</b><small>DIGITAL ECOSYSTEM</small></span></a>
+<button class="menu" id="menuBtn">☰</button>
+<nav class="links" id="navLinks">
+<a href="#home">Home</a><a href="#healthcare">Healthcare</a><a href="#clinic">Clinic</a><a href="#client">Client</a><a href="#education">Education</a><a href="#cbt">CBT</a><a href="#library">Library</a><a href="#notes">Notes</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+</nav>
+</div>
+</header>
 
-      <nav class="desktop-nav" id="desktop-nav">
-        <a href="#home" class="nav-link active">Home</a>
-        <a href="#dashboard" class="nav-link">Dashboard</a>
-        <a href="#healthcare" class="nav-link">Healthcare</a>
-        <a href="#education" class="nav-link">Education</a>
-        <a href="#library" class="nav-link">Digital Library</a>
-        <a href="#cbt" class="nav-link">CBT Exam</a>
-        <a href="#portals" class="nav-link">Portals</a>
-      </nav>
+<main id="home">
+<section class="hero">
+<div class="container hero-grid">
+<div><span class="eyebrow">HEALTHCARE • EDUCATION • TECHNOLOGY • COMMUNITY</span>
+<h1>Welcome to the <span>MACOKI Digital Ecosystem</span></h1>
+<p>A central digital hub connecting MACOKI healthcare, clinic and maternity services, client services, education, CBT examinations, digital library and study resources.</p>
+<div class="actions"><a class="btn primary" href="#education">Explore Education</a><a class="btn secondary" href="#healthcare">Explore Healthcare</a></div>
+</div>
+<div class="hero-card"><div class="hero-logo">M</div><h2>MACOKI MASTER PORTAL</h2><p>Your central gateway to the MACOKI digital ecosystem.</p><div class="mini"><span><b>8+</b>Modules</span><span><b>100+</b>CBT-ready</span><span><b>24/7</b>Digital access</span></div></div>
+</div>
+</section>
 
-      <div class="header-actions">
-        <button id="theme-toggle" class="icon-btn" aria-label="Toggle dark/light mode" title="Toggle theme">
-          <i class="fas fa-moon"></i>
-        </button>
-        <button id="auth-btn" class="btn btn-primary btn-sm" onclick="openAuthModal()">
-          <i class="fas fa-user"></i> <span>Login / Register</span>
-        </button>
-        <button id="mobile-menu-btn" class="icon-btn mobile-only" aria-label="Open menu">
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
-    </div>
-  </header>
+<section>
+<div class="container"><div class="section-title"><span class="eyebrow">ECOSYSTEM</span><h2>Everything connected in one place</h2><p>Select a service to jump directly to its module.</p></div>
+<div class="grid">
+<a class="card" href="#healthcare"><span class="icon">🏥</span><h3>MACOKI Healthcare</h3><p>Health information, prevention and community health resources.</p></a>
+<a class="card" href="#clinic"><span class="icon">🏠</span><h3>Clinic & Maternity</h3><p>Clinic services, maternity information and referral guidance.</p></a>
+<a class="card" href="#client"><span class="icon">👤</span><h3>Client Portal</h3><p>Client registration and records demo.</p></a>
+<a class="card" href="#education"><span class="icon">🎓</span><h3>Education</h3><p>Student profile, courses, results and academic tools.</p></a>
+<a class="card" href="#cbt"><span class="icon">📝</span><h3>CBT Examination</h3><p>Timed MCQ tests with automatic scoring.</p></a>
+<a class="card" href="#library"><span class="icon">📚</span><h3>Digital Library</h3><p>Searchable catalogue of authorised resources.</p></a>
+<a class="card" href="#notes"><span class="icon">📖</span><h3>Study Notes</h3><p>Organised public health and learning notes.</p></a>
+<a class="card" href="#projects"><span class="icon">💻</span><h3>Projects</h3><p>Directory for other MACOKI digital projects.</p></a>
+</div></div>
+</section>
 
-  <!-- Mobile Navigation -->
-  <div id="mobile-nav" class="mobile-nav">
-    <div class="mobile-nav-header">
-      <span class="brand">MACOKI</span>
-      <button id="close-mobile-nav" class="icon-btn"><i class="fas fa-times"></i></button>
-    </div>
-    <nav class="mobile-nav-links">
-      <a href="#home" class="mobile-link">Home</a>
-      <a href="#dashboard" class="mobile-link">Dashboard</a>
-      <a href="#healthcare" class="mobile-link">Healthcare</a>
-      <a href="#education" class="mobile-link">Education</a>
-      <a href="#library" class="mobile-link">Digital Library</a>
-      <a href="#cbt" class="mobile-link">CBT Exam</a>
-      <a href="#portals" class="mobile-link">Portals</a>
-      <a href="#contact" class="mobile-link">Contact</a>
-    </nav>
-  </div>
-  <div id="mobile-overlay" class="mobile-overlay"></div>
+<section id="healthcare" class="alt"><div class="container">
+<div class="section-title"><span class="eyebrow">HEALTHCARE</span><h2>MACOKI Healthcare</h2><p>Health education, prevention and community-oriented resources.</p></div>
+<div class="grid">
+<div class="card"><span class="icon">🛡️</span><h3>Preventive Healthcare</h3><p>Health promotion, screening awareness and disease-prevention education.</p></div>
+<div class="card"><span class="icon">🌍</span><h3>Community Health</h3><p>Community health education, outreach planning and referral information.</p></div>
+<div class="card"><span class="icon">👶</span><h3>Maternal & Child Health</h3><p>Educational resources covering antenatal, postnatal, child health and immunisation awareness.</p></div>
+<div class="card"><span class="icon">📊</span><h3>Public Health</h3><p>Epidemiology, environmental health, health promotion and population health resources.</p></div>
+</div></div></section>
 
-  <!-- Main Content -->
-  <main>
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-      <div class="hero-bg">
-        <div class="hero-shape shape-1"></div>
-        <div class="hero-shape shape-2"></div>
-        <div class="hero-shape shape-3"></div>
-      </div>
-      <div class="container hero-content">
-        <div class="hero-text">
-          <span class="hero-badge"><i class="fas fa-star"></i> Welcome to the Future of Learning & Care</span>
-          <h1>MACOKI <span class="gradient-text">Master Portal</span></h1>
-          <p class="hero-desc">One unified platform for world-class healthcare, secondary education excellence, digital library resources, and computer-based testing — all designed for Nigerian students and communities.</p>
-          <div class="hero-cta">
-            <a href="#education" class="btn btn-primary btn-lg"><i class="fas fa-graduation-cap"></i> Student Portal</a>
-            <a href="#healthcare" class="btn btn-outline btn-lg"><i class="fas fa-heartbeat"></i> Book Appointment</a>
-          </div>
-          <div class="hero-stats">
-            <div class="stat">
-              <span class="stat-num" data-target="2500">0</span>+
-              <span class="stat-label">Students</span>
-            </div>
-            <div class="stat">
-              <span class="stat-num" data-target="120">0</span>+
-              <span class="stat-label">Textbooks</span>
-            </div>
-            <div class="stat">
-              <span class="stat-num" data-target="100">0</span>
-              <span class="stat-label">CBT Questions</span>
-            </div>
-            <div class="stat">
-              <span class="stat-num" data-target="98">0</span>%
-              <span class="stat-label">Satisfaction</span>
-            </div>
-          </div>
-        </div>
-        <div class="hero-visual">
-          <div class="hero-card card-1">
-            <i class="fas fa-user-graduate"></i>
-            <span>Learning</span>
-          </div>
-          <div class="hero-card card-2">
-            <i class="fas fa-notes-medical"></i>
-            <span>Healthcare</span>
-          </div>
-          <div class="hero-card card-3">
-            <i class="fas fa-book-open"></i>
-            <span>Library</span>
-          </div>
-          <div class="hero-card card-4">
-            <i class="fas fa-laptop-code"></i>
-            <span>CBT</span>
-          </div>
-        </div>
-      </div>
-      <div class="scroll-indicator">
-        <a href="#dashboard"><i class="fas fa-chevron-down"></i></a>
-      </div>
-    </section>
+<section id="clinic"><div class="container">
+<div class="section-title"><span class="eyebrow">CLINIC</span><h2>MACOKI Clinic & Maternity Home</h2><p>Professional clinic information and service presentation.</p></div>
+<div class="service-grid">
+<div class="service"><strong>🩺 Clinic Services</strong><p>General consultation, health education, preventive services and appropriate referral.</p></div>
+<div class="service"><strong>🤰 Maternity Services</strong><p>Antenatal, postnatal and maternity information. Emergency cases require prompt professional care.</p></div>
+<div class="service"><strong>🔬 Diagnostics</strong><p>Present verified laboratory and diagnostic services offered by the facility.</p></div>
+<div class="service"><strong>💊 Pharmacy</strong><p>Add verified pharmacy information and medicine-management services.</p></div>
+<div class="service"><strong>🧼 Infection Prevention</strong><p>Display infection-prevention and patient-safety information.</p></div>
+<div class="service"><strong>📞 Referral</strong><p>Provide verified referral and emergency contact pathways.</p></div>
+</div>
+<div class="notice" style="margin-top:20px">
+  <strong>MACOKI Clinic & Maternity Home</strong><br><br>
+  📧 <strong>Email:</strong> macokiclinicandmaternityhome@gmail.com<br><br>
+  🕐 <strong>Opening Hours:</strong> 8:00 AM – 8:30 PM<br><br>
+  🏥 <strong>Services:</strong> Clinic Services • Maternity • Community Health • Public Health • Diagnostics • Pharmacy • Nursing & Midwifery • Preventive Healthcare • Rehabilitation • Referral Services<br><br>
+  📍 <strong>Address:</strong> No. 4 Afaukwu Autonomous Community, Ikwuano LGA, Abia State<br><br>
+  ☎️ <strong>Telephone:</strong> 07053477686 / 09037277433
+</div>
+</div></section>
 
-    <!-- Master Dashboard -->
-    <section id="dashboard" class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-badge">Overview</span>
-          <h2>MACOKI Master Dashboard</h2>
-          <p>Your central hub for everything MACOKI — education, health, and digital resources in one beautiful place.</p>
-        </div>
-        <div class="dashboard-grid">
-          <a href="#education" class="dash-card education">
-            <div class="dash-icon"><i class="fas fa-graduation-cap"></i></div>
-            <h3>Secondary School Portal</h3>
-            <p>Register, take CBT exams, access study notes, track progress and compete with peers.</p>
-            <span class="dash-link">Enter Portal <i class="fas fa-arrow-right"></i></span>
-          </a>
-          <a href="#healthcare" class="dash-card healthcare">
-            <div class="dash-icon"><i class="fas fa-heartbeat"></i></div>
-            <h3>Healthcare Services</h3>
-            <p>Book appointments, consult specialists, and manage your health journey with ease.</p>
-            <span class="dash-link">Book Now <i class="fas fa-arrow-right"></i></span>
-          </a>
-          <a href="#library" class="dash-card library">
-            <div class="dash-icon"><i class="fas fa-book"></i></div>
-            <h3>Digital Library</h3>
-            <p>Free legal textbooks, past questions, notes and open educational resources.</p>
-            <span class="dash-link">Browse Books <i class="fas fa-arrow-right"></i></span>
-          </a>
-          <a href="#cbt" class="dash-card cbt">
-            <div class="dash-icon"><i class="fas fa-laptop"></i></div>
-            <h3>CBT Examination</h3>
-            <p>100-question computer-based tests with instant scoring and performance analytics.</p>
-            <span class="dash-link">Start Exam <i class="fas fa-arrow-right"></i></span>
-          </a>
-        </div>
+<section id="client" class="alt"><div class="container">
+<div class="section-title"><span class="eyebrow">CLIENT SERVICES</span><h2>MACOKI Client & Records Portal</h2><p>Register clients and manage basic demo records — everything stays in this browser only.</p></div>
+<div class="warn-strong">⚠️ This is a front-end demo only. Records are stored in this browser's local storage, are NOT encrypted, NOT backed up, and are NOT a substitute for a real clinical records system. Do not enter real patients' diagnoses, test results, or other confidential health information here. A production system needs a secure server, database, encryption, and NDPR/HIPAA-appropriate access controls.</div>
+<div class="two" style="margin-top:20px">
+<form class="panel" id="clientForm"><h2>New Client / Record</h2>
+<label>Full Name<input id="clientName" required></label>
+<label>Email<input id="clientEmail" type="email"></label>
+<label>Phone<input id="clientPhone" required></label>
+<label>Service<select id="clientService"><option>General enquiry</option><option>Appointment request</option><option>Antenatal care</option><option>Postnatal care</option><option>Health education</option><option>Referral information</option></select></label>
+<label>Notes (non-confidential only)<textarea id="clientNotes" placeholder="e.g. Follow-up visit scheduled"></textarea></label>
+<button class="btn primary" type="submit">Save Record</button>
+<p id="clientMsg" class="success"></p>
+</form>
+<div class="panel">
+<h2>Saved Records (<span id="recordCount">0</span>)</h2>
+<div class="search"><input id="recordSearch" placeholder="Search by name or phone..." style="margin-top:0"></div>
+<div id="recordList"></div>
+<div id="recordDetail"></div>
+</div>
+</div>
+</div></section>
 
-        <!-- Live Activity Feed (unique feature) -->
-        <div class="activity-feed">
-          <h3><i class="fas fa-bolt"></i> Live Activity</h3>
-          <div id="activity-list" class="activity-list">
-            <!-- Populated by JS -->
-          </div>
-        </div>
-      </div>
-    </section>
+<section id="education"><div class="container">
+<div class="section-title"><span class="eyebrow">EDUCATION</span><h2>MACOKI Education Portal</h2><p>Student learning, academic tools and progress tracking.</p></div>
+<div class="student-dashboard"><div class="stat"><b>01</b><span>Student Profile</span></div><div class="stat"><b>12</b><span>Demo Courses</span></div><div class="stat"><b>100+</b><span>CBT Questions</span></div><div class="stat"><b>4.00</b><span>Example CGPA</span></div></div>
+<div class="two" style="margin-top:25px"><div class="panel"><h2>Student Profile</h2><form id="studentForm"><label>Student Name<input id="studentName" placeholder="Enter student name"></label><label>Student ID<input id="studentId" placeholder="e.g. MAC/2026/001"></label><label>Programme<input id="studentProgramme" placeholder="Programme"></label><label>Level<select id="studentLevel"><option>100 Level</option><option>200 Level</option><option>300 Level</option><option>400 Level</option><option>500 Level</option></select></label><button class="btn primary">Save Student Profile</button></form><p id="studentMsg" class="success"></p></div>
+<div class="panel"><h2>CGPA Calculator</h2><p>Enter total quality points and total credit units.</p><label>Total Quality Points<input type="number" id="qp" min="0" step="0.01"></label><label>Total Credit Units<input type="number" id="cu" min="1" step="1"></label><button class="btn primary" id="calcCgpa">Calculate CGPA</button><h3 id="cgpaResult"></h3></div></div>
+</div></section>
 
-    <!-- Healthcare Section -->
-    <section id="healthcare" class="section alt-bg">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-badge">Care</span>
-          <h2>MACOKI Healthcare</h2>
-          <p>Compassionate, professional healthcare services tailored for our community. Book consultations, manage appointments and connect with our medical team.</p>
-        </div>
+<section id="cbt" class="alt"><div class="container">
+<div class="section-title"><span class="eyebrow">ONLINE EXAMINATION</span><h2>MACOKI CBT System</h2><p>Fully functional demonstration with timer, navigation and automatic scoring.</p></div>
+<div id="cbtStart" class="panel center"><h2>Public Health CBT</h2><p>10 sample questions are included below. Replace the <code>questionBank</code> array in the script with your authorised curriculum question bank.</p><button class="btn primary" id="startCbt">Start Examination</button></div>
+<div id="cbtExam" class="panel hidden">
+<div class="exam-top"><b>Question <span id="qNo">1</span>/<span id="qTotal">10</span></b><strong>Time: <span id="timer">10:00</span></strong></div>
+<div class="qnav" id="qNav"></div>
+<h2 id="qText"></h2>
+<div id="answers" class="answers"></div>
+<div class="exam-actions"><button class="btn secondary" id="prevQ">Previous</button><button class="btn primary" id="nextQ">Next</button><button class="btn danger hidden" id="submitCbt">Submit</button></div>
+</div>
+<div id="cbtResult" class="panel center hidden"><h2>CBT Result</h2><div id="resultScore" class="score"></div><p id="resultText"></p><button class="btn primary" id="restartCbt">Take Again</button></div>
+</div></section>
 
-        <div class="healthcare-grid">
-          <div class="service-card">
-            <div class="service-icon"><i class="fas fa-stethoscope"></i></div>
-            <h3>General Consultation</h3>
-            <p>Comprehensive health checks and medical advice from qualified practitioners.</p>
-            <button class="btn btn-primary btn-sm" onclick="openBookingModal('General Consultation')">Book Appointment</button>
-          </div>
-          <div class="service-card">
-            <div class="service-icon"><i class="fas fa-baby"></i></div>
-            <h3>Pediatric Care</h3>
-            <p>Specialized care for infants, children and adolescents.</p>
-            <button class="btn btn-primary btn-sm" onclick="openBookingModal('Pediatric Care')">Book Appointment</button>
-          </div>
-          <div class="service-card">
-            <div class="service-icon"><i class="fas fa-heartbeat"></i></div>
-            <h3>Cardiology</h3>
-            <p>Heart health screening, monitoring and specialist consultations.</p>
-            <button class="btn btn-primary btn-sm" onclick="openBookingModal('Cardiology')">Book Appointment</button>
-          </div>
-          <div class="service-card">
-            <div class="service-icon"><i class="fas fa-brain"></i></div>
-            <h3>Mental Wellness</h3>
-            <p>Counseling, stress management and mental health support.</p>
-            <button class="btn btn-primary btn-sm" onclick="openBookingModal('Mental Wellness')">Book Appointment</button>
-          </div>
-          <div class="service-card">
-            <div class="service-icon"><i class="fas fa-syringe"></i></div>
-            <h3>Immunization</h3>
-            <p>Vaccination services for all ages following national schedules.</p>
-            <button class="btn btn-primary btn-sm" onclick="openBookingModal('Immunization')">Book Appointment</button>
-          </div>
-          <div class="service-card">
-            <div class="service-icon"><i class="fas fa-flask"></i></div>
-            <h3>Laboratory Tests</h3>
-            <p>Accurate diagnostic tests with quick turnaround times.</p>
-            <button class="btn btn-primary btn-sm" onclick="openBookingModal('Laboratory Tests')">Book Appointment</button>
-          </div>
-        </div>
+<section id="library"><div class="container">
+<div class="section-title"><span class="eyebrow">DIGITAL LIBRARY</span><h2>MACOKI Digital Library</h2><p>Search and organise resources that you own, have permission to distribute, or that are legally open-access.</p></div>
+<div class="search"><input id="librarySearch" placeholder="Search textbooks, notes, past questions..."></div>
+<div id="libraryList"></div>
+<div class="panel" style="margin-top:20px"><h2>Add a Resource</h2>
+<label>Title<input id="libTitle" placeholder="Resource title"></label>
+<label>Category<select id="libCategory"><option>Textbook</option><option>Lecture Note</option><option>Past Question</option><option>Guideline</option><option>Other</option></select></label>
+<label>Link (URL to a source you have rights to share)<input id="libLink" placeholder="https://..."></label>
+<button class="btn primary" id="addLibItem">Add Resource</button>
+</div>
+<div class="notice" style="margin-top:20px">Only add textbooks, PDFs, past questions or other materials that you own, have permission to distribute, or that are legally public-domain/openly licensed. The starter entries below link only to official, freely published sources (WHO, NOUN) — verify each link still applies before relying on it.</div>
+</div></section>
 
-        <div class="external-links">
-          <h3>Our Live Healthcare Platforms</h3>
-          <div class="link-cards">
-            <a href="https://macoki-healthcare.netlify.app" target="_blank" rel="noopener" class="ext-link">
-              <i class="fas fa-external-link-alt"></i> MACOKI Healthcare Site
-            </a>
-            <a href="https://macoki-clinic.netlify.app" target="_blank" rel="noopener" class="ext-link">
-              <i class="fas fa-external-link-alt"></i> Main Clinic Portal
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+<section id="notes" class="alt"><div class="container">
+<div class="section-title"><span class="eyebrow">STUDY NOTES</span><h2>MACOKI Study Notes</h2><p>Organised learning topics.</p></div>
+<div class="grid">
+<div class="card"><h3>🦠 Epidemiology</h3><p>Measures of disease occurrence, study designs, surveillance and outbreak concepts.</p></div>
+<div class="card"><h3>🌿 Environmental Health</h3><p>Water, sanitation, waste management, occupational and environmental hazards.</p></div>
+<div class="card"><h3>👥 Community Health</h3><p>Community diagnosis, mobilisation, participation and primary healthcare.</p></div>
+<div class="card"><h3>📢 Health Promotion</h3><p>Health education, behaviour change, prevention and population wellbeing.</p></div>
+<div class="card"><h3>💻 HMIS</h3><p>Health information systems, data quality, reporting and use of health data.</p></div>
+<div class="card"><h3>⚖️ Public Health Law</h3><p>Legal and regulatory concepts relevant to public health practice.</p></div>
+<div class="card"><h3>🩹 First Aid</h3><p>Basic first-aid concepts, emergency recognition and referral principles.</p></div>
+<div class="card"><h3>🧼 IPC</h3><p>Infection prevention and control principles for safer healthcare.</p></div>
+</div></div></section>
 
-    <!-- Education / Student Portal -->
-    <section id="education" class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-badge">Learn</span>
-          <h2>MACOKI Secondary School Learning Portal</h2>
-          <p>A complete digital learning environment for secondary students — register, study, practice, and excel.</p>
-        </div>
-
-        <div class="education-layout">
-          <div class="edu-sidebar">
-            <div class="user-panel" id="student-panel">
-              <div class="user-avatar" id="user-avatar">
-                <i class="fas fa-user-graduate"></i>
-              </div>
-              <h4 id="user-name">Guest Student</h4>
-              <p id="user-class">Not logged in</p>
-              <div class="user-stats" id="user-stats" style="display:none;">
-                <div><strong id="best-score">0%</strong><span>Best Score</span></div>
-                <div><strong id="attempts-count">0</strong><span>Attempts</span></div>
-              </div>
-              <button class="btn btn-primary btn-block" id="student-auth-btn" onclick="openAuthModal('student')">
-                Login / Register
-              </button>
-            </div>
-
-            <nav class="edu-nav">
-              <button class="edu-nav-btn active" data-panel="overview"><i class="fas fa-home"></i> Overview</button>
-              <button class="edu-nav-btn" data-panel="notes"><i class="fas fa-sticky-note"></i> Study Notes</button>
-              <button class="edu-nav-btn" data-panel="progress"><i class="fas fa-chart-line"></i> My Progress</button>
-              <button class="edu-nav-btn" data-panel="leaderboard"><i class="fas fa-trophy"></i> Leaderboard</button>
-              <button class="edu-nav-btn" data-panel="profile"><i class="fas fa-user-cog"></i> Profile</button>
-            </nav>
-          </div>
-
-          <div class="edu-content">
-            <!-- Overview Panel -->
-            <div class="edu-panel active" id="panel-overview">
-              <h3>Welcome to Your Learning Hub</h3>
-              <p>Access everything you need to succeed in your secondary education journey.</p>
-              <div class="feature-grid">
-                <div class="feature-item">
-                  <i class="fas fa-laptop-code"></i>
-                  <h4>CBT Practice</h4>
-                  <p>100 curated questions across core subjects with instant feedback.</p>
-                  <a href="#cbt" class="btn btn-sm btn-outline">Take Exam</a>
-                </div>
-                <div class="feature-item">
-                  <i class="fas fa-book-reader"></i>
-                  <h4>Digital Library</h4>
-                  <p>Free legal textbooks and past questions at your fingertips.</p>
-                  <a href="#library" class="btn btn-sm btn-outline">Browse</a>
-                </div>
-                <div class="feature-item">
-                  <i class="fas fa-lightbulb"></i>
-                  <h4>Study Notes</h4>
-                  <p>Searchable notes and summaries for quick revision.</p>
-                  <button class="btn btn-sm btn-outline" onclick="switchEduPanel('notes')">Open Notes</button>
-                </div>
-                <div class="feature-item">
-                  <i class="fas fa-medal"></i>
-                  <h4>Achievements</h4>
-                  <p>Earn badges and climb the leaderboard.</p>
-                  <button class="btn btn-sm btn-outline" onclick="switchEduPanel('leaderboard')">View Rankings</button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Study Notes Panel -->
-            <div class="edu-panel" id="panel-notes">
-              <h3>Study Notes Search</h3>
-              <div class="search-bar">
-                <i class="fas fa-search"></i>
-                <input type="text" id="notes-search" placeholder="Search notes by topic, subject or keyword...">
-              </div>
-              <div class="notes-filters">
-                <button class="filter-chip active" data-subject="all">All</button>
-                <button class="filter-chip" data-subject="mathematics">Mathematics</button>
-                <button class="filter-chip" data-subject="english">English</button>
-                <button class="filter-chip" data-subject="biology">Biology</button>
-                <button class="filter-chip" data-subject="chemistry">Chemistry</button>
-                <button class="filter-chip" data-subject="physics">Physics</button>
-                <button class="filter-chip" data-subject="civic">Civic Education</button>
-              </div>
-              <div id="notes-list" class="notes-list">
-                <!-- Populated by JS -->
-              </div>
-            </div>
-
-            <!-- Progress Panel -->
-            <div class="edu-panel" id="panel-progress">
-              <h3>My Learning Progress</h3>
-              <div id="progress-content">
-                <div class="empty-state">
-                  <i class="fas fa-chart-bar"></i>
-                  <p>Login to track your CBT scores, attempts and improvement over time.</p>
-                  <button class="btn btn-primary" onclick="openAuthModal('student')">Login Now</button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Leaderboard Panel -->
-            <div class="edu-panel" id="panel-leaderboard">
-              <h3><i class="fas fa-trophy"></i> Top Performers</h3>
-              <div id="leaderboard-list" class="leaderboard-list">
-                <!-- Populated by JS -->
-              </div>
-            </div>
-
-            <!-- Profile Panel -->
-            <div class="edu-panel" id="panel-profile">
-              <h3>Student Profile</h3>
-              <div id="profile-content">
-                <div class="empty-state">
-                  <i class="fas fa-user-circle"></i>
-                  <p>Please login or register to manage your profile.</p>
-                  <button class="btn btn-primary" onclick="openAuthModal('student')">Get Started</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Digital Library -->
-    <section id="library" class="section alt-bg">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-badge">Resources</span>
-          <h2>Digital Library</h2>
-          <p>Access free, legal, open educational textbooks and materials. All resources are either public domain, Creative Commons, or openly licensed for educational use.</p>
-        </div>
-
-        <div class="library-controls">
-          <div class="search-bar large">
-            <i class="fas fa-search"></i>
-            <input type="text" id="library-search" placeholder="Search textbooks by title, subject or author...">
-          </div>
-          <div class="library-filters">
-            <select id="filter-subject">
-              <option value="all">All Subjects</option>
-              <option value="mathematics">Mathematics</option>
-              <option value="english">English Language</option>
-              <option value="biology">Biology</option>
-              <option value="chemistry">Chemistry</option>
-              <option value="physics">Physics</option>
-              <option value="civic">Civic Education</option>
-              <option value="economics">Economics</option>
-              <option value="literature">Literature</option>
-              <option value="computer">Computer Science</option>
-              <option value="history">History</option>
-            </select>
-            <select id="filter-level">
-              <option value="all">All Levels</option>
-              <option value="jss">Junior Secondary (JSS)</option>
-              <option value="sss">Senior Secondary (SSS)</option>
-              <option value="general">General / Reference</option>
-            </select>
-          </div>
-        </div>
-
-        <div id="library-grid" class="library-grid">
-          <!-- Populated by JS with legal textbooks -->
-        </div>
-      </div>
-    </section>
-
-    <!-- CBT Section -->
-    <section id="cbt" class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-badge">Assess</span>
-          <h2>Computer-Based Testing (CBT)</h2>
-          <p>Practice with up to 100 carefully curated secondary school questions. Instant scoring, detailed review and performance tracking.</p>
-        </div>
-
-        <div id="cbt-container">
-          <!-- Start Screen -->
-          <div id="cbt-start" class="cbt-card">
-            <div class="cbt-hero">
-              <i class="fas fa-laptop-code"></i>
-              <h3>Ready to Test Your Knowledge?</h3>
-              <p>Select number of questions and subject focus. You can take the full 100-question challenge or a shorter practice set.</p>
-            </div>
-            <div class="cbt-options">
-              <div class="option-group">
-                <label>Number of Questions</label>
-                <div class="question-count-btns">
-                  <button class="q-count-btn" data-count="10">10</button>
-                  <button class="q-count-btn" data-count="25">25</button>
-                  <button class="q-count-btn active" data-count="50">50</button>
-                  <button class="q-count-btn" data-count="100">100</button>
-                </div>
-              </div>
-              <div class="option-group">
-                <label>Subject Focus</label>
-                <select id="cbt-subject">
-                  <option value="mixed">Mixed (All Subjects)</option>
-                  <option value="mathematics">Mathematics</option>
-                  <option value="english">English</option>
-                  <option value="biology">Biology</option>
-                  <option value="chemistry">Chemistry</option>
-                  <option value="physics">Physics</option>
-                  <option value="civic">Civic Education</option>
-                </select>
-              </div>
-              <div class="option-group">
-                <label>Time Limit (optional)</label>
-                <select id="cbt-timer">
-                  <option value="0">No Timer</option>
-                  <option value="15">15 minutes</option>
-                  <option value="30">30 minutes</option>
-                  <option value="60">60 minutes</option>
-                  <option value="90">90 minutes</option>
-                </select>
-              </div>
-            </div>
-            <button id="start-cbt-btn" class="btn btn-primary btn-lg btn-block">
-              <i class="fas fa-play"></i> Start Examination
-            </button>
-            <p class="cbt-note"><i class="fas fa-info-circle"></i> You must be logged in as a student to save your scores and track progress.</p>
-          </div>
-
-          <!-- Exam Screen -->
-          <div id="cbt-exam" class="cbt-card" style="display:none;">
-            <div class="cbt-header">
-              <div class="cbt-progress">
-                <span id="q-current">1</span> / <span id="q-total">50</span>
-              </div>
-              <div class="cbt-timer-display" id="timer-display" style="display:none;">
-                <i class="fas fa-clock"></i> <span id="timer-text">30:00</span>
-              </div>
-              <button class="btn btn-sm btn-outline" id="quit-cbt">Quit</button>
-            </div>
-            <div class="progress-bar"><div id="progress-fill"></div></div>
-            <div id="question-area">
-              <!-- Question rendered here -->
-            </div>
-            <div class="cbt-nav">
-              <button class="btn btn-outline" id="prev-q" disabled><i class="fas fa-arrow-left"></i> Previous</button>
-              <button class="btn btn-primary" id="next-q">Next <i class="fas fa-arrow-right"></i></button>
-              <button class="btn btn-success" id="submit-cbt" style="display:none;"><i class="fas fa-check"></i> Submit Exam</button>
-            </div>
-          </div>
-
-          <!-- Results Screen -->
-          <div id="cbt-results" class="cbt-card" style="display:none;">
-            <div class="results-hero">
-              <div class="score-circle">
-                <svg viewBox="0 0 100 100">
-                  <circle cx="50" cy="50" r="45" class="score-bg"/>
-                  <circle cx="50" cy="50" r="45" class="score-fill" id="score-circle"/>
-                </svg>
-                <div class="score-text">
-                  <span id="score-percent">0</span>%
-                </div>
-              </div>
-              <h3 id="result-title">Great Effort!</h3>
-              <p id="result-summary">You scored 0 out of 50 questions correctly.</p>
-            </div>
-            <div class="results-stats">
-              <div class="r-stat"><strong id="correct-count">0</strong><span>Correct</span></div>
-              <div class="r-stat"><strong id="wrong-count">0</strong><span>Wrong</span></div>
-              <div class="r-stat"><strong id="time-taken">--</strong><span>Time</span></div>
-            </div>
-            <div class="results-actions">
-              <button class="btn btn-primary" id="review-btn"><i class="fas fa-eye"></i> Review Answers</button>
-              <button class="btn btn-outline" id="retry-btn"><i class="fas fa-redo"></i> Try Again</button>
-              <button class="btn btn-outline" id="back-to-start"><i class="fas fa-home"></i> Back</button>
-            </div>
-            <div id="review-area" style="display:none;"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Portals Section (Student, Client, Staff) -->
-    <section id="portals" class="section alt-bg">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-badge">Access</span>
-          <h2>Dedicated Portals</h2>
-          <p>Separate secure portals for students, patients/clients, and staff members. Each role has tailored features and dashboards.</p>
-        </div>
-
-        <div class="portals-grid">
-          <div class="portal-card student-portal">
-            <div class="portal-icon"><i class="fas fa-user-graduate"></i></div>
-            <h3>Student Portal</h3>
-            <ul>
-              <li><i class="fas fa-check"></i> Registration & Login</li>
-              <li><i class="fas fa-check"></i> Profile Management</li>
-              <li><i class="fas fa-check"></i> CBT History & Scores</li>
-              <li><i class="fas fa-check"></i> Study Notes Access</li>
-              <li><i class="fas fa-check"></i> Progress Analytics</li>
-              <li><i class="fas fa-check"></i> Leaderboard Ranking</li>
-            </ul>
-            <button class="btn btn-primary btn-block" onclick="openAuthModal('student')">Student Login / Register</button>
-          </div>
-
-          <div class="portal-card client-portal">
-            <div class="portal-icon"><i class="fas fa-user-injured"></i></div>
-            <h3>Client / Patient Portal</h3>
-            <ul>
-              <li><i class="fas fa-check"></i> Secure Registration</li>
-              <li><i class="fas fa-check"></i> Book Appointments</li>
-              <li><i class="fas fa-check"></i> View Booking History</li>
-              <li><i class="fas fa-check"></i> Update Personal Info</li>
-              <li><i class="fas fa-check"></i> Appointment Reminders</li>
-              <li><i class="fas fa-check"></i> Feedback & Ratings</li>
-            </ul>
-            <button class="btn btn-primary btn-block" onclick="openAuthModal('client')">Client Login / Register</button>
-          </div>
-
-          <div class="portal-card staff-portal">
-            <div class="portal-icon"><i class="fas fa-user-md"></i></div>
-            <h3>Staff / Workers Portal</h3>
-            <ul>
-              <li><i class="fas fa-check"></i> Staff Login</li>
-              <li><i class="fas fa-check"></i> Manage Appointments</li>
-              <li><i class="fas fa-check"></i> View Patient Queue</li>
-              <li><i class="fas fa-check"></i> Update Availability</li>
-              <li><i class="fas fa-check"></i> Internal Announcements</li>
-              <li><i class="fas fa-check"></i> Performance Overview</li>
-            </ul>
-            <button class="btn btn-primary btn-block" onclick="openAuthModal('staff')">Staff Login</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact / Footer CTA -->
-    <section id="contact" class="section">
-      <div class="container">
-        <div class="cta-box">
-          <h2>Ready to Experience MACOKI?</h2>
-          <p>Join thousands of students and patients who trust the MACOKI ecosystem for education and healthcare excellence.</p>
-          <div class="cta-buttons">
-            <button class="btn btn-primary btn-lg" onclick="openAuthModal('student')">Create Student Account</button>
-            <button class="btn btn-outline btn-lg" onclick="openAuthModal('client')">Register as Client</button>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="logo">
-            <div class="logo-icon">
-              <svg viewBox="0 0 48 48" width="36" height="36">
-                <circle cx="24" cy="24" r="22" fill="url(#logoGrad)"/>
-                <text x="24" y="30" text-anchor="middle" fill="#fff" font-size="18" font-weight="800">M</text>
-              </svg>
-            </div>
-            <span class="brand">MACOKI</span>
-          </div>
-          <p>Empowering communities through education and healthcare excellence.</p>
-        </div>
-        <div class="footer-links">
-          <h4>Quick Links</h4>
-          <a href="#home">Home</a>
-          <a href="#education">Student Portal</a>
-          <a href="#healthcare">Healthcare</a>
-          <a href="#library">Digital Library</a>
-          <a href="#cbt">CBT Exam</a>
-        </div>
-        <div class="footer-links">
-          <h4>Portals</h4>
-          <a href="#portals">Student Portal</a>
-          <a href="#portals">Client Portal</a>
-          <a href="#portals">Staff Portal</a>
-        </div>
-        <div class="footer-links">
-          <h4>External Sites</h4>
-          <a href="https://macoki-healthcare.netlify.app" target="_blank" rel="noopener">Healthcare Site</a>
-          <a href="https://macoki-school.netlify.app" target="_blank" rel="noopener">School Site</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 MACOKI. All rights reserved. Built with excellence.</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Back to Top -->
-  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
-    <i class="fas fa-arrow-up"></i>
-  </button>
-
-  <!-- Auth Modal -->
-  <div id="auth-modal" class="modal">
-    <div class="modal-content auth-modal-content">
-      <button class="modal-close" onclick="closeAuthModal()"><i class="fas fa-times"></i></button>
-      <div class="auth-tabs">
-        <button class="auth-tab active" data-tab="login">Login</button>
-        <button class="auth-tab" data-tab="register">Register</button>
-      </div>
-      <div id="auth-role-indicator" class="auth-role">
-        <i class="fas fa-user-graduate"></i> <span>Student Portal</span>
-      </div>
-
-      <!-- Login Form -->
-      <form id="login-form" class="auth-form">
-        <div class="form-group">
-          <label>Email</label>
-          <input type="email" id="login-email" required placeholder="your@email.com">
-        </div>
-        <div class="form-group">
-          <label>Password</label>
-          <div class="password-field">
-            <input type="password" id="login-password" required placeholder="Enter password">
-            <button type="button" class="toggle-pass" onclick="togglePassword('login-password')"><i class="fas fa-eye"></i></button>
-          </div>
-        </div>
-        <button type="submit" class="btn btn-primary btn-block">Login</button>
-        <p class="auth-switch">Don't have an account? <a href="#" onclick="switchAuthTab('register'); return false;">Register</a></p>
-      </form>
-
-      <!-- Register Form -->
-      <form id="register-form" class="auth-form" style="display:none;">
-        <div class="form-group">
-          <label>Full Name</label>
-          <input type="text" id="reg-name" required placeholder="John Doe">
-        </div>
-        <div class="form-group">
-          <label>Email</label>
-          <input type="email" id="reg-email" required placeholder="your@email.com">
-        </div>
-        <div class="form-group" id="reg-class-group">
-          <label>Class / Level</label>
-          <select id="reg-class">
-            <option value="JSS1">JSS 1</option>
-            <option value="JSS2">JSS 2</option>
-            <option value="JSS3">JSS 3</option>
-            <option value="SS1">SS 1</option>
-            <option value="SS2">SS 2</option>
-            <option value="SS3">SS 3</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Password</label>
-          <div class="password-field">
-            <input type="password" id="reg-password" required minlength="6" placeholder="Min 6 characters">
-            <button type="button" class="toggle-pass" onclick="togglePassword('reg-password')"><i class="fas fa-eye"></i></button>
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Confirm Password</label>
-          <input type="password" id="reg-confirm" required placeholder="Confirm password">
-        </div>
-        <button type="submit" class="btn btn-primary btn-block">Create Account</button>
-        <p class="auth-switch">Already have an account? <a href="#" onclick="switchAuthTab('login'); return false;">Login</a></p>
-      </form>
-    </div>
-  </div>
-
-  <!-- Booking Modal -->
-  <div id="booking-modal" class="modal">
-    <div class="modal-content">
-      <button class="modal-close" onclick="closeBookingModal()"><i class="fas fa-times"></i></button>
-      <h3><i class="fas fa-calendar-check"></i> Book Appointment</h3>
-      <p id="booking-service-name">Service</p>
-      <form id="booking-form">
-        <div class="form-group">
-          <label>Full Name</label>
-          <input type="text" id="book-name" required>
-        </div>
-        <div class="form-group">
-          <label>Email / Phone</label>
-          <input type="text" id="book-contact" required>
-        </div>
-        <div class="form-group">
-          <label>Preferred Date</label>
-          <input type="date" id="book-date" required>
-        </div>
-        <div class="form-group">
-          <label>Preferred Time</label>
-          <select id="book-time" required>
-            <option value="">Select time</option>
-            <option>09:00 AM</option>
-            <option>10:00 AM</option>
-            <option>11:00 AM</option>
-            <option>12:00 PM</option>
-            <option>02:00 PM</option>
-            <option>03:00 PM</option>
-            <option>04:00 PM</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Additional Notes</label>
-          <textarea id="book-notes" rows="3" placeholder="Any special requests..."></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary btn-block">Confirm Booking</button>
-      </form>
-    </div>
-  </div>
-
-  <!-- Toast Notification -->
-  <div id="toast" class="toast"></div>
-
-  <script src="js/data.js"></script>
-  <script src="js/auth.js"></script>
-  <script src="js/cbt.js"></script>
-  <script src="js/library.js"></script>
-  <script src="js/main.js"></script>
-</body>
-</html>
+<section id="projects"><div class="container">
+<div class="section-title"><span class="eyebrow">MACOKI PROJECTS</span><h2>Digital Project Directory</h2><p>Connect your deployed MACOKI websites here.</p></div>
+<div class="grid">
+<div class="card"><span class="icon">🏥</span><h3>MACOKI Healthcare</h3><p>Add your deployed URL.</p><button class="btn secondary" onclick="editLink(this,'healthcare')">Set Link</button></div>
+<div class="card"><span class="icon">🏠</span><h3>MACOKI Clinic</h3><p>Add your deployed clinic URL.</p><button class="btn secondary" onclick="editLink(this,'clinic')">Set Link</button></div>
+<div class="card"><span class="icon">🎓</span><
